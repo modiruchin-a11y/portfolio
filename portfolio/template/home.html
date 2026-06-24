@@ -1,0 +1,337 @@
+{% extends 'nav/base.html'%}
+{% load static %}
+{% block content %}
+
+
+
+
+<!-- Hero Section -->
+
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="hero-tag">
+                    Python Developer (Fresher)
+                </span>
+
+                <h1 class="hero-title">
+                    Ruchin Modi
+                </h1>
+
+                <h3 class="hero-subtitle">
+                    Backend Developer | Django | PostgreSQL
+                </h3>
+
+                <p class="hero-text">
+
+                    I build scalable web applications using
+                    Python, Django, PostgreSQL, HTML5, CSS3
+                    and Bootstrap 5.
+
+                    Passionate about backend development,
+                    database design and solving real-world
+                    problems through technology.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects"
+                       class="btn btn-primary btn-lg">
+                        View Projects
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-primary btn-lg">
+                        Contact Me
+                    </a>
+
+                    <a href="{% static 'resume/Modi_Ruchin_Resume.pdf' %}"
+                       class="btn btn-primary btn-lg"
+                       download>
+                        Download Resume
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <div class="image-box">
+
+                    <img src="{% static 'images/profile.png' %}"
+                         alt="Ruchin Modi"
+                         class="profile-image">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- About Section -->
+
+
+<section id="about">
+
+    <div class="container"
+     data-aos="fade-up">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="card shadow border-0">
+
+                    <div class="card-body p-4">
+
+                        <p class="lead text-center">
+
+                            I am a Python Django Backend Developer
+                            passionate about building dynamic web
+                            applications and solving real-world problems.
+
+                            I enjoy working with Django, Bootstrap,
+                            HTML5, CSS3, PostgreSQL and Git.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- Skills Section -->
+
+
+<section id="skills"
+         class="bg-light py-5">
+
+<div class="row"
+     data-aos="zoom-in">
+
+<h2 class="section-title">
+    Skills
+</h2>
+
+<div class="row text-center">
+
+<div class="col-lg-3 col-md-6 col-12 mb-4">
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h5>
+    <i class="bi bi-code-slash"></i>
+    Frontend
+</h5>
+<p>
+HTML5<br>
+CSS3<br>
+Bootstrap 5
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3 mb-3">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h5>
+    <i class="bi bi-server"></i>
+    Backend
+</h5>
+<p>
+Python<br>
+Django
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3 mb-3">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h5>
+    <i class="bi bi-database"></i>
+    Database
+</h5>
+<p>
+PostgreSQL
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3 mb-3">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h5>
+    <i class="bi bi-tools"></i>
+    Tools
+</h5>
+<p>
+Git<br>
+GitHub<br>
+VS Code<br>
+Pycharm
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- Projects Section -->
+
+<section id="projects">
+<div class="row"
+     data-aos="fade-up">
+
+   <h2 class="section-title">
+    Projects
+</h2>
+
+    <div class="row">
+
+        {% for project in projects %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card h-100 shadow">
+
+                <img src="{{ project.image.url }}"
+                     class="card-img-top"
+                     alt="{{ project.title }}">
+
+                <div class="card-body">
+
+                    <h5>
+                        {{ project.title }}
+                    </h5>
+
+                    <p>
+                        {{ project.short_description }}
+                    </p>
+
+                </div>
+
+                <div class="card-footer">
+                    <a href="{% url 'project_d' project.id %}"
+                    class="btn btn-primary w-100">
+                    View Details
+                </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <h4>No Projects Added Yet</h4>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact" class="py-5 bg-light">
+
+   <div class="container"
+     data-aos="fade-left">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <p class="contact-line">
+
+    <i class="bi bi-envelope-fill"></i>
+    modiruchin@gmail.com |
+
+    <i class="bi bi-telephone-fill"></i>
+    +91 63559 73584 |
+
+    <i class="bi bi-github"></i>
+    <a href="https://github.com/modiruchin-a11y/git-code">GitHub</a> |
+
+    <i class="bi bi-linkedin"></i>
+    
+    <a href="https://www.linkedin.com/in/ruchin-modi-862489348/">LinkedIn</a> |
+
+    <i class="bi bi-geo-alt-fill"></i>
+    Ahmedabad, Gujarat
+
+</p>
+
+    </div>
+
+</section>
+
+{% endblock %}
