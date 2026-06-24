@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xv^9$8^&p3emjvz8qbb)_k6w@i55f%hv_tw_*6n)46$0h5v()_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -118,17 +118,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
-# Only needed if you have a 'static' folder outside apps
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-# STATICFILES_DIRS = [BASE_DIR / "static"]
-
-# STATIC_ROOT = BASE_DIR / "staticfiles"  # For production use with `collectstatic`
 
 
 # Path where media is stored
