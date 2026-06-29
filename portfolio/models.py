@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
@@ -8,7 +8,7 @@ from django.db import models
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='project/')
+    image = CloudinaryField('image')
     short_description = models.TextField()
     full_description = models.TextField()
     github_link = models.URLField(blank=True,null=True)
