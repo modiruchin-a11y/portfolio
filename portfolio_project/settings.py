@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "tumhari-service-name.onrender.com",
+    "portfolio-ruz1.onrender.com",
     ]
 
 
