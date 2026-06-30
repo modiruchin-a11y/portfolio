@@ -329,5 +329,16 @@ section{
         width:220px;
         height:220px;
     }
-}
+  #skills .card{
+        min-height:180px;
+    }
 
+    #skills h5{
+        font-size:1rem;
+    }
+
+    #skills p{
+        font-size:.9rem;
+    }
+
+}
